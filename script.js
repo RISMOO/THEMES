@@ -2,6 +2,7 @@
 let button=document.querySelector('#mode');
 let span = document.querySelector('span');
 let nom=document.querySelector('#nom');
+let ris=document.querySelector('#ris');
 
 if(localStorage.getItem('prenom')){ //si le localstorage prenom existe
     document.body.append(' bonjour ' + localStorage.getItem('prenom'))//on l'ajoute dans le html
@@ -32,11 +33,14 @@ if(document.body.classList.contains('dark')){//classList=tableau content toute n
    document.body.className="";//on vide le body
    span.textContent='Thème sombre';//on change le texte
    localStorage.setItem('theme', 'clair');//on definit la preference de l'utilisdateur
+   ris.style.color="black";
 }
 
 else{
     
 modeSombre();
+ris.style.color="blackj";
+
 }
 
 });
@@ -46,6 +50,7 @@ function modeSombre(){
     document.body.className="dark";// on rajoute la class dark(css)
     span.textContent="Thème clair";
     localStorage.setItem('theme', 'sombre');//on defint la préfrence de l'utilisateur
+    ris.style.color="white";
 
 
 }
